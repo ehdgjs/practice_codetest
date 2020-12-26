@@ -1,0 +1,6 @@
+A = int(input())
+B = int(input())
+print("{0}".format(A*int((B%10))))
+print("{0}".format(A*int((B%100)/10)))
+print("{0}".format(A*int(B/100)))
+print("{0}".format(A*B))
