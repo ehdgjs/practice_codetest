@@ -27,7 +27,13 @@ lst = sorted(lst)
 first = lst[N - 1]
 second = lst[N - 2]
 
-result += first * (M - int(M / K)) + second * int(M / K)
+# 예외 존재
+# result += first * (M - int(M / K)) + second * int(M / K)
+count = int(M / (K + 1)) * K # 반복되는 횟수를 구해서 가장 큰 값을 곱해주기
+count += M % (K + 1) # 나누었을때 0으로 나누어 떨어지지 않기 때문에 값 추가
+
+result += first * (count)
+result += second * (M - count)
 
 print(result)
 
